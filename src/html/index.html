@@ -10,7 +10,16 @@
     </head>
     <body>
         <div class="page">
-            <div class="top-background"></div>
+            <a href="http://domenart-studio.ru/" class="studio">
+                <img src="../img/domenart.png" alt="">
+            </a>
+            <a href="#" class="prev">
+                <span>←</span>предыдущий проект
+            </a>
+            <a href="#" class="next">
+                следующий проект<span>→</span>
+            </a>
+            <a href="#" class="back"></a>
             <div class="spray-background"></div>
             <div class="header">
                 <img src="../img/page-title.png" alt="">
@@ -59,24 +68,26 @@
                     </ol>
                 </div>
             </div>
-            <div class="container">
-                <h2 class="section-title">Ход работы</h2>
-                <div class="progress__text">
-                    Учитывая сферу деятельности компании<br />
-                    и пожелания клиента о том, как он представляет результат,<br />
-                    мы выполнили 2 варианта иллюстрации.
+            <div class="progress">
+                <div class="container">
+                    <h2 class="section-title">Ход работы</h2>
+                    <div class="progress__text">
+                        Учитывая сферу деятельности компании<br />
+                        и пожелания клиента о том, как он представляет результат,<br />
+                        мы выполнили 2 варианта иллюстрации.
+                    </div>
                 </div>
             </div>
             <div class="illustrations">
                 <div class="variant-first">
-                    <div class="variant-marker-first">
-                        <div class="variant-marker-first__number">
+                    <div class="variant-first__step-marker step-marker">
+                        <div class="step-marker__number">
                             <img src="../img/step-1.png" alt="" />
                         </div>
-                        <div class="variant-marker-first__text">Иллюстрации</div>
-                        <div class="variant-marker-first__thread"></div>
-                        <div class="variant-marker-first__dot"></div>
-                        <div class="variant-marker-first__title">
+                        <div class="step-marker__text">Иллюстрации</div>
+                        <div class="step-marker__thread"></div>
+                        <div class="step-marker__dot"></div>
+                        <div class="step-marker__title">
                             <img src="../img/variant-1-title.png" alt="" />
                         </div>
                     </div>
@@ -90,6 +101,9 @@
                     </div>
                 </div>
                 <div class="illustrations-result">
+                    <div class="illustrations-result__notebook">
+                        <img src="../img/notebook.png" alt="">
+                    </div>
                     <div class="illustrations-result__content">
                         <div class="section-title">
                             Результат
@@ -99,9 +113,9 @@
                                 Вариант №2 особенно холили и лелеяли наши дизайнеры,  оценил его и ответственный
                                 со стороны клиента, но...
                             </p>
-                            <p class="illustrations-result__winner">
+                            <div class="illustrations-result__winner">
                                 КАМАЗ Дакар побеждает!
-                            </p>
+                            </div>
                             <p>
                                 Итогом работы по 1 заданию стал 3-й вариант:
                             </p>
@@ -115,81 +129,88 @@
                 </div>
             </div>
             <div class="design">
-                <div class="container">
-                    <div class="catalog">
-                        <img src="../img/catalog.jpg" alt="" />
-                        <div class="design-marker">
-                            <div class="design-marker__number">
-                                <img src="../img/step-2.png" alt="" />
+                <div class="design-item">
+                    <div class="design-desc">
+                        <div class="design-desc-marker">
+                            <div class="design-desc-marker__title">
+                                Каталог
                             </div>
-                            <div class="design-marker__text">
-                                Дизайн сайта
-                            </div>
-                            <div class="design-marker__thread"></div>
-                            <div class="design-marker__dot"></div>
+                            <div class="design-desc-marker__thread"></div>
+                            <div class="design-desc-marker__dot"></div>
                         </div>
-                        <div class="design-desc">
-                            <div class="design-desc-marker">
-                                <div class="design-desc-marker__title">
-                                    Каталог
-                                </div>
-                                <div class="design-desc-marker__thread"></div>
-                                <div class="design-desc-marker__dot"></div>
-                            </div>
-                            <div class="design-desc__text">
-                                <p>
-                                    Линейка продукции ARMA
-                                    состоит из 6 направлений,
-                                    у каждого -
-                                    индивидуальный рисунок протектора, по которому однозначно определяется бренд.
-                                </p>
-                                <p>
-                                    Потому фокус в каталоге
-                                    именно на нем.
-                                </p>
-                            </div>
+                        <div class="design-desc__text">
+                            <p>
+                                Линейка продукции ARMA
+                                состоит из 6 направлений,
+                                у каждого -
+                                индивидуальный рисунок протектора, по которому однозначно определяется бренд.
+                            </p>
+                            <p>
+                                Потому фокус в каталоге
+                                именно на нем.
+                            </p>
                         </div>
                     </div>
-                    <div class="product">
-                        <img src="../img/product.jpg" alt="" />
-                        <div class="design-desc">
-                            <div class="design-desc-marker">
-                                <div class="design-desc-marker__title">
-                                    Карта товара
-                                </div>
-                                <div class="design-desc-marker__thread"></div>
-                                <div class="design-desc-marker__dot"></div>
-                            </div>
-                            <div class="design-desc__text">
-                                <p>
-                                    Карточка товара в каталоге -
-                                    классический случай:
-                                    содержит описание,
-                                    схему расположения
-                                    и технические характеристики
-                                </p>
-                            </div>
+                    <div class="design-item__image">
+                        <img src="../img/catalog.jpg" alt="" />
+                    </div>
+                    <div class="design__step-marker step-marker">
+                        <div class="step-marker__number">
+                            <img src="../img/step-2.png" alt="" />
                         </div>
+                        <div class="step-marker__text">
+                            Дизайн сайта
+                        </div>
+                        <div class="step-marker__thread"></div>
+                        <div class="step-marker__dot"></div>
+                    </div>
+                </div>
+                <div class="design-item">
+                    <div class="design-desc design-desc_product">
+                        <div class="design-desc-marker">
+                            <div class="design-desc-marker__title">
+                                Карта товара
+                            </div>
+                            <div class="design-desc-marker__thread"></div>
+                            <div class="design-desc-marker__dot"></div>
+                        </div>
+                        <div class="design-desc__text">
+                            <p>
+                                Карточка товара в каталоге -
+                                классический случай:
+                                содержит описание,
+                                схему расположения
+                                и технические характеристики
+                            </p>
+                        </div>
+                    </div>
+                    <div class="design-item__image">
+                        <img src="../img/product.jpg" alt="" />
                     </div>
                 </div>
             </div>
             <div class="coding">
                 <div class="coding__desktop">
-                    <img src="../img/desktop.png" alt="" />
+                    <img  src="../img/desktop.png" alt="" />
+                    <div class="coding__step-marker step-marker">
+                        <div class="step-marker__number">
+                            <img src="../img/step-3.png" alt="" />
+                        </div>
+                        <div class="step-marker__text">Вёрстка</div>
+                        <div class="step-marker__thread"></div>
+                        <div class="step-marker__dot"></div>
+                    </div>
                 </div>
                 <div class="coding__laptop">
                     <img src="../img/laptop.png" alt="" />
                 </div>
                 <div class="coding__mobile">
-                    <img src="../img/mobile.png" alt="" />
+                    <img  src="../img/mobile.png" alt="" />
                 </div>
             </div>
             <div class="ending">
-                <div class="container">
-                    Спасибо за внимание!
-                </div>
+                Спасибо за внимание!
             </div>
-            <div class="bottom-background"></div>
         </div>
     <script type="text/javascript" src="main.js"></script>
     </body>

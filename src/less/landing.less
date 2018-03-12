@@ -219,9 +219,9 @@ h2 {
 .variant-first {
     margin-bottom: 20px;
     position: relative;
-    padding-top: 80%;
-    background: url('../img/variant-1.png') 50% 0% no-repeat;
-    background-size: 100% auto;
+    //padding-top: 80%;
+    //background: url('../img/variant-1.png') 50% 0% no-repeat;
+    //background-size: 100% auto;
     @media (max-width: @breakpoint-medium-max) {
         margin-top: 350px;
     }
@@ -295,9 +295,9 @@ h2 {
 
 .variant-second {
     position: relative;
-    padding-top: 80%;
-    background: url('../img/variant-2.png') 50% 0% no-repeat;
-    background-size: 100% auto;
+    //padding-top: 80%;
+    //background: url('../img/variant-2.png') 50% 0% no-repeat;
+    //background-size: 100% auto;
 }
 
 .variant-marker-second {
@@ -551,10 +551,10 @@ h2 {
     line-height: 1;
     color: #fff;
     @media (max-width: @breakpoint-large-max) {
+        margin-left: 0;
         font-size: 50px;
         letter-spacing: 2px;
         text-align: center;
-        transform: translateX(-50%);
     }
     @media (max-width: @breakpoint-xsmall-max) {
         font-size: 30px;
@@ -565,6 +565,7 @@ h2 {
     position: fixed;
     top: 26px;
     left: 10px;
+    z-index: 10;
     @media (max-width: @breakpoint-xsmall-max) {
         transform: scale(0.7);
     }
@@ -575,7 +576,7 @@ h2 {
     position: fixed;
     left: 0;
     bottom: 20px;
-    z-index: 5;
+    z-index: 10;
     padding: 10px 13px 10px 6px;
     background-color: #707071;
     color: #fff;
@@ -601,7 +602,7 @@ h2 {
     position: fixed;
     right: 0;
     bottom: 20px;
-    z-index: 5;
+    z-index: 10;
     padding: 10px 6px 10px 13px;
     background-color: #707071;
     color: #fff;
@@ -630,7 +631,7 @@ h2 {
     position: fixed;
     top: 50%;
     left: -80px;
-    z-index: 5;
+    z-index: 10;
     transform: translate(0,-50%) rotate(45deg);
     transform-origin: center;
     transition: transform 0.2s;

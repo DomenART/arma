@@ -1,3 +1,1 @@
-
-
-console.log('hey!')
+import UIkit from 'uikit';

@@ -7,7 +7,6 @@ const PATHS = {
     build: path.join(__dirname, 'dist/')
 }
 
-// Main Settings config
 module.exports = {
     entry: {
         main: PATHS.source + 'index.js'
@@ -17,82 +16,107 @@ module.exports = {
         filename: 'bundle.js'
     },
     module: {
-        rules: [{
-            test: /\.js$/,
-            loader: 'babel-loader'
-        }, {
-            test: /\.less$/,
-            use: [
-                'file-loader?name=[name].css',
-                'extract-loader',
-                {
-                    loader: "css-loader",
-                    options: {
-                        minimize: env === 'production' ? true : false
+        rules: [
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/
+            },
+            {
+                test: /\.less$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'main.css',
+                        }
+                    },
+                    {
+                        loader: 'extract-loader',
+                    },
+                    {
+                        loader: "css-loader",
+                        options: {
+                            minimize: env === 'production' ? true : false
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader'
+                    },
+                    {
+                        loader: 'less-loader'
+                    },
+                ]
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: "css-loader",
+                        options: {
+                            minimize: env === 'production' ? true : false
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader'
+                    },
+                ]
+            },
+            {
+                test: /\.html$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                           name: '[name].[ext]'
+                        }
+                    },
+                    {
+                       loader: 'extract-loader'
+                    },
+                    {
+                       loader: 'html-loader'
                     }
-                },
-                'postcss-loader',
-                'less-loader'
-            ]
-        }, {
-            test: /\.css$/,
-            use: [
-                {
-                    loader: "css-loader",
-                    options: {
-                        minimize: env === 'production' ? true : false
+                ]
+            },
+            {
+                test: /\.(png|jpg|gif|svg)/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]?[hash]',
+                            outputPath: 'img/'
+                        }
                     }
-                },
-                'postcss-loader'
-            ]
-        },
-        {
-            test: /\.html$/,
-            use: [
-                {
-                   loader: 'file-loader',
-                   options: {
-                       name: '[name].[ext]'
+                ]
+            },
+            {
+                test: /\.(webm|mp4)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]?[hash]',
+                            outputPath: 'img/'
+                        }
                     }
-                },
-                {
-                   loader: 'extract-loader'
-                },
-                {
-                   loader: 'html-loader'
-                }
-            ]
-        },
-        {
-            test: /\.(png|jpg|gif|svg)/,
-            use: [{
-                loader: 'file-loader',
-                options: {
-                    name: '[name].[ext]?[hash]',
-                    outputPath: 'img/'
-                }
-            }]
-        }, {
-            test: /\.(webm|mp4)$/,
-            use: [{
-                loader: 'file-loader',
-                options: {
-                    name: '[name].[ext]?[hash]',
-                    outputPath: 'img/'
-                }
-            }]
-        }, {
-            test: /\.(eot|woff|woff2|ttf|otf)$/,
-            use: [{
-                loader: 'file-loader',
-                options: {
-                    name: '[name].[ext]?[hash]',
-                    outputPath: 'fonts/'
-                }
-            }]
-        }]
+                ]
+            },
+            {
+                test: /\.(eot|woff|woff2|ttf|otf)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]?[hash]',
+                            outputPath: 'fonts/'
+                        }
+                    }
+                ]
+            }
+        ]
     },
-
     plugins: [
         new webpack.optimize.UglifyJsPlugin({
             minimize: env === 'production' ? true : false

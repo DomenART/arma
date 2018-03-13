@@ -57,8 +57,8 @@ h2 {
     background-color: rgba(29,33,39,0.1);
 }
 
-.section-title {
-    margin-bottom: 20px !important;
+h2.section-title {
+    margin-bottom: 20px;
     font-size: 48px;
     font-weight: 400;
     line-height: 1;
@@ -98,11 +98,9 @@ h2 {
 }
 
 .goals__heading {
+    display: flex;
     width: 13.5%;
     margin-right: 3%;
-    writing-mode: tb;
-    transform: rotate(180deg);
-    transform-origin: center;
     text-align: center;
     color: rgb(255,239,175);
     text-transform: uppercase;
@@ -110,15 +108,24 @@ h2 {
     font-weight: 400;
     letter-spacing: 14px;
     line-height: 1;
+    span {
+        writing-mode: tb;
+        transform: rotate(180deg);
+        transform-origin: center;
+    }
     @media (max-width: @breakpoint-medium-max) {
-        writing-mode: initial;
-        transform: none;
         margin-bottom: 60px;
+        span {
+            writing-mode: initial;
+            transform: none;
+        }
     }
     @media (max-width: @breakpoint-xsmall-max) {
         width: 100%;
-        font-size: 68px;
-        letter-spacing: 0;
+        span {
+            font-size: 68px;
+            letter-spacing: 0;
+        }
     }
 }
 
@@ -213,15 +220,12 @@ h2 {
 
 .illustrations {
     max-width: 1510px;
-    margin: 0 auto 283px;;
+    margin: 0 auto 200px;;
 }
 
 .variant-first {
-    margin-bottom: 20px;
+    margin-bottom: 90px;
     position: relative;
-    //padding-top: 80%;
-    //background: url('../img/variant-1.png') 50% 0% no-repeat;
-    //background-size: 100% auto;
     @media (max-width: @breakpoint-medium-max) {
         margin-top: 350px;
     }
@@ -295,9 +299,6 @@ h2 {
 
 .variant-second {
     position: relative;
-    //padding-top: 80%;
-    //background: url('../img/variant-2.png') 50% 0% no-repeat;
-    //background-size: 100% auto;
 }
 
 .variant-marker-second {
@@ -333,7 +334,7 @@ h2 {
 .illustrations-result {
     display: flex;
     position: relative;
-    top: -50px;
+    top: -90px;
     @media (max-width: @breakpoint-xsmall-max) {
         flex-direction: column;
         align-items: center;
@@ -342,6 +343,8 @@ h2 {
 
 .illustrations-result__notebook {
     width: 75%;
+    position: relative;
+    left: -1%;
     @media (max-width: @breakpoint-medium-max) {
         width: 50%;
     }
@@ -355,7 +358,7 @@ h2 {
     width: 25%;
     position: relative;
     top: -105px;
-    left: -12.6%;
+    left: -13%;
     @media (max-width: @breakpoint-medium-max) {
         width: 50%;
         left: 0;
@@ -368,9 +371,6 @@ h2 {
     }
 }
 
-.design-desc_product {
-
-}
 .illustrations-result__text {
     font-size: 18px;
     font-weight: 500;
@@ -435,6 +435,7 @@ h2 {
     width: 25%;
     margin-top: 30.9%;
     position: relative;
+    z-index: 1;
     @media (max-width: @breakpoint-large-max) {
         padding-left: 20px;
     }
